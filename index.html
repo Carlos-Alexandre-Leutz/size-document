@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Tamanho da Janela<span class="window-size"></span></h3>
+    <p>Sabendo esse número, você pode tomar decisões com base nos pontos de interrupção da janela.</p>
+    <hr>
+    <h3>O tamanho da tela é <span class="screen-size"></span></h3>
+    <p>Aqui você tem uma ideia do tamanho da tela do dispositivo. </p>
+
+    <script>
+        function sizeOfThings() {
+            var windowWidth = window.innerWidth;
+            var windowHeight = window.innerHeight;
+
+            var screenWidth = screen.width;
+            var screenHeight = screen.height;
+
+            document.querySelector('.window-size').innerHTML = windowWidth + 'x' + windowHeight;
+            document.querySelector('.screen-size').innerHTML = screenWidth + 'x' + screenHeight;
+
+        };
+
+        sizeOfThings();
+
+        window.addEventListener('resize', function() {
+            sizeOfThings();
+        });
+    </script>
+</body>
+
+</html>
